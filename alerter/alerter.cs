@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Diagnostics;
 
 namespace AlerterSpace {
     class Alerter {
@@ -6,9 +7,11 @@ namespace AlerterSpace {
         static int networkAlertStub(float celcius) {
             Console.WriteLine("ALERT: Temperature is {0} celcius", celcius);
             // Return 200 for ok
+            if (celcius < 200)
+                return 200;
             // Return 500 for not-ok
-            // stub always succeeds and returns 200
-            return 200;
+            else
+                return 500;
         }
         static void alertInCelcius(float farenheit) {
             float celcius = (farenheit - 32) * 5 / 9;
@@ -24,6 +27,7 @@ namespace AlerterSpace {
         static void Main(string[] args) {
             alertInCelcius(400.5f);
             alertInCelcius(303.6f);
+            Debug.Assert(alertFailureCount == 1);
             Console.WriteLine("{0} alerts failed.", alertFailureCount);
             Console.WriteLine("All is well (maybe!)\n");
         }
