@@ -13,10 +13,12 @@ namespace TshirtSpace {
             }
         }
         static void Main(string[] args) {
-            Debug.Assert(Size(37) == "S");
-            Debug.Assert(Size(38) == "M");
-            Debug.Assert(Size(40) == "M");
-            Debug.Assert(Size(43) == "L");
+            Debug.Assert(Size(37) == "S"); // Below boundary
+            Debug.Assert(Size(38) == "M"); // boundary
+            Debug.Assert(Size(39) == "M"); // above boundary
+            Debug.Assert(Size(41) == "M"); // Below boundary 
+            Debug.Assert(Size(42) == "M"); // boundary
+            Debug.Assert(Size(43) == "L"); // above boundary
             Console.WriteLine( "All is well (maybe!)");
         }
     }
