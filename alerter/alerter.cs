@@ -28,7 +28,7 @@ namespace AlerterSpace {
             alertInCelcius(400.5f); // Above boundary 
             alertInCelcius(392f);   // boundary (celcius 200)
             alertInCelcius(303.6f); // below boundary
-            Debug.Assert(alertFailureCount == 1);
+            Debug.Assert(alertFailureCount == 2);
             Console.WriteLine("{0} alerts failed.", alertFailureCount);
             Console.WriteLine("All is well (maybe!)\n");
         }
