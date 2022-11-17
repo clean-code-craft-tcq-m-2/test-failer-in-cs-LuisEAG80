@@ -25,7 +25,7 @@ namespace MisalignedSpace {
 
             foreach (var row in result)
             {
-                Debug.Assert(row.IndexOf("|") == 2);
+                Debug.Assert(row.IndexOf("|") == 3);
             }
 
             Console.WriteLine("All is well (maybe!)");
